@@ -1,8 +1,20 @@
-# React + Vite
+# Simple Journal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. 프로젝트 구성
+2. 프로젝트 사용법
+3. 참고 및 출처
+4. FAQ
 
-Currently, two official plugins are available:
+## 프로젝트 구성
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. 기능
+
+- 회원가입/로그인
+- 포스트 작성
+
+2. 페이지 구성
+
+- 메인
+- 사이드바
+- 포스트 작성
+- 설정
