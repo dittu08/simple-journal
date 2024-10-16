@@ -5,10 +5,7 @@ import Delimiter from "@editorjs/delimiter";
 import CheckList from "@editorjs/checklist";
 
 export const EDITOR_JS_TOOLS = {
-  paragraph: {
-    class: Paragraph,
-    inlineToolbar: true,
-  },
+  paragraph: Paragraph,
   header: Header,
   checkList: CheckList,
   list: List,

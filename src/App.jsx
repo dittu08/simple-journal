@@ -1,34 +1,29 @@
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import WritePage from "./WritePage";
+import PostListPage from "./PostListPage";
 import { useState } from "react";
 import "./App.css";
-import Editor from "./Editor";
-
-const INITIAL_DATA = {
-  time: new Date().getTime(),
-  blocks: [
-    {
-      type: "header",
-      data: {
-        text: "Hello, World!",
-        level: 1,
-      },
-    },
-  ],
-};
 
 function App() {
-  const [data, setData] = useState(INITIAL_DATA);
+  const [posts, setPosts] = useState([]);
+
   return (
-    <div className="editor">
-      <Editor data={data} onChange={setData} editorblock="editorjs-container" />
-      <button
-        className="savebtn"
-        onClick={() => {
-          alert(JSON.stringify(data));
-        }}
-      >
-        Save
-      </button>
-    </div>
+    <Router>
+      <nav>
+        <Link to="/">Post List</Link>
+        <Link to="/write">Write a Post</Link>
+      </nav>
+      <Routes>
+        <Route
+          path="/"
+          element={<PostListPage posts={posts} setPosts={setPosts} />}
+        />
+        <Route
+          path="/write"
+          element={<WritePage posts={posts} setPosts={setPosts} />}
+        />
+      </Routes>
+    </Router>
   );
 }
 

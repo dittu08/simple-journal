@@ -8,7 +8,6 @@ const Editor = ({ data, onChange, editorblock }) => {
     if (!ref.current) {
       const editor = new EditorJS({
         holder: editorblock,
-
         tools: EDITOR_JS_TOOLS,
         data: data,
         async onChange(api, event) {
