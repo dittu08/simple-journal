@@ -16,6 +16,7 @@
     "@editorjs/header": "^2.8.8",
     "@editorjs/list": "^1.10.0",
     "@editorjs/paragraph": "^2.11.6",
+    "cors": "^2.8.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0"
