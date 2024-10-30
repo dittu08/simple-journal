@@ -20,7 +20,11 @@ function WritePost({ posts, setPosts }) {
   const navigate = useNavigate();
 
   const addPost = async () => {
-    const newPost = { id: posts.length + 1, content: data.blocks };
+    const newPost = {
+      id: posts.length + 1,
+      content: data.blocks,
+      createdAt: new Date(),
+    };
 
     try {
       const response = await fetch("http://localhost:5000/posts", {

@@ -1,6 +1,11 @@
 import React from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 
+const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  return date.toLocaleString();
+};
+
 function PostDetail({ posts, setPosts }) {
   const { id } = useParams();
   const postId = parseInt(id, 10);
@@ -29,6 +34,7 @@ function PostDetail({ posts, setPosts }) {
   return (
     <div>
       <p>Post {post.id}</p>
+      <p>{formatDate(post.createdAt)}</p>
       {post.content.map((block, index) => (
         <div key={index}>
           {block.type === "header" &&

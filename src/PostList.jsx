@@ -1,6 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  return date.toLocaleString();
+};
+
 function PostList({ posts, setPosts }) {
   const deletePost = (id) => {
     const updatedPosts = posts.filter((post) => post.id !== id);
@@ -20,6 +25,7 @@ function PostList({ posts, setPosts }) {
                 <strong>
                   <Link to={`/posts/${post.id}`}>Post {post.id}</Link>
                 </strong>
+                <p>{formatDate(post.createdAt)}</p>
                 {post.content.map((block, index) => (
                   <div key={index}>
                     {block.type === "header" &&
