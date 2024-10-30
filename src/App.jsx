@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import WritePage from "./WritePage";
-import PostListPage from "./PostListPage";
+import WritePost from "./WritePost";
+import PostList from "./PostList";
+import EditPost from "./EditPost";
+import PostDetail from "./PostDetail";
 import { useState } from "react";
 import "./App.css";
 
@@ -16,11 +18,19 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<PostListPage posts={posts} setPosts={setPosts} />}
+          element={<PostList posts={posts} setPosts={setPosts} />}
         />
         <Route
           path="/write"
-          element={<WritePage posts={posts} setPosts={setPosts} />}
+          element={<WritePost posts={posts} setPosts={setPosts} />}
+        />
+        <Route
+          path="/edit/:id"
+          element={<EditPost posts={posts} setPosts={setPosts} />}
+        />
+        <Route
+          path="/posts/:id"
+          element={<PostDetail posts={posts} setPosts={setPosts} />}
         />
       </Routes>
     </Router>
